@@ -25,19 +25,61 @@ public class Clinician {
 
     }
  // getters
-    public String getId() { return id; }
-    public String getName() { return name; }
-    public String getRole() { return role; }
-    public String getSpecialty() { return Specialty; }
-    public String getWorkplaceId() { return workplaceId; }
-    public String getEmail() { return email; }
+    public String getId() {
+        return id;
+
+    }
+
+    public String getName() {
+        return name;
+
+    }
+
+    public String getRole() {
+        return role;
+
+    }
+
+    public String getSpecialty() {
+        return Specialty;
+
+    }
+
+    public String getWorkplaceId() {
+        return workplaceId;
+
+    }
+
+    public String getEmail() {
+        return email;
+
+    }
 
 //  setters
-    public void setName(String name) { this.name = name; }
-    public void setRole(String role) { this.role = role; }
-    public void setSpecialty(String Specialty) { this.Specialty = Specialty; }
-    public void setWorkplaceId(String workplaceId) { this.workplaceId = workplaceId; }
-    public void setEmail(String email) { this.email = email; }
+    public void setName(String name) {
+        this.name = name;
+
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+
+    }
+
+    public void setSpecialty(String Specialty) {
+        this.Specialty = Specialty;
+
+    }
+
+    public void setWorkplaceId(String workplaceId) {
+        this.workplaceId = workplaceId;
+
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+
+    }
 
 //   methods
     @Override
