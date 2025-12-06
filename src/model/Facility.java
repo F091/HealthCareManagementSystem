@@ -2,25 +2,41 @@ package model;
 
 public class Facility {
 
-    private final String id;      // unique facility ID
-    private String name;          // facility name
-    private String type;          // e.g. "GP", "Hospital"
-    private String address;       // full address
-    private String phone;         // contact phone number
-    private int capacity;         // optional: number of patients/beds
+    private final String id;
+    private String name;
+    private String type;
+    private String address;
+    private String postcode;
+    private String phone;
+    private String email;
+    private String openingHours;
+    private String managerName;
+    private int capacity;
+    private String specialities;
 
     public Facility(String id,
                     String name,
                     String type,
                     String address,
+                    String postcode,
                     String phone,
-                    int capacity) {
+                    String email,
+                    String openingHours,
+                    String managerName,
+                    int capacity,
+                    String specialities) {
+
         this.id = id;
         this.name = name;
         this.type = type;
         this.address = address;
+        this.postcode = postcode;
         this.phone = phone;
+        this.email = email;
+        this.openingHours = openingHours;
+        this.managerName = managerName;
         this.capacity = capacity;
+        this.specialities = specialities;
     }
 
     public String getId() {
@@ -39,37 +55,36 @@ public class Facility {
         return address;
     }
 
+    public String getPostcode() {
+        return postcode;
+    }
+
     public String getPhone() {
         return phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getOpeningHours() {
+        return openingHours;
+    }
+
+    public String getManagerName() {
+        return managerName;
     }
 
     public int getCapacity() {
         return capacity;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
+    public String getSpecialities() {
+        return specialities;
     }
 
     @Override
     public String toString() {
-        return "Facility[id=" + id + ", name=" + name +
-                ", type=" + type + ", capacity=" + capacity + "]";
+        return name + " (" + type + ")";
     }
 }
