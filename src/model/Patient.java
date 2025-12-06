@@ -1,76 +1,67 @@
 package model;
 
-// Represents a patient record in the HealthCareManagement system (model layer)
 public class Patient {
 
-    private final String id;   // unique patient ID
-    private String name;  // full name of patient
-    private String nhsNumber;  // NHS ID number
-    private String contact;  // Phone/Email
-    private String gpSurgeryId;//Facility ID for their GP Practice
+    private String id;
+    private String firstName;
+    private String lastName;
+    private String dateOfBirth;
+    private String nhsNumber;
+    private String gender;
+    private String phone;
+    private String email;
+    private String address;
+    private String postcode;
+    private String emergencyContactName;
+    private String emergencyContactPhone;
+    private String registrationDate;
+    private String gpSurgeryId;
 
-    // constructor to create a patient with all key details
-    public Patient(String id, String name, String nhsNumber, String contact, String gpSurgeryId) {
+
+    public Patient(
+            String id,
+            String firstName,
+            String lastName,
+            String dateOfBirth,
+            String nhsNumber,
+            String gender,
+            String phone,
+            String email,
+            String address,
+            String postcode,
+            String emergencyContactName,
+            String emergencyContactPhone,
+            String registrationDate,
+            String gpSurgeryId
+    ) {
         this.id = id;
-        this.name = name;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dateOfBirth = dateOfBirth;
         this.nhsNumber = nhsNumber;
-        this.contact = contact;
+        this.gender = gender;
+        this.phone = phone;
+        this.email = email;
+        this.address = address;
+        this.postcode = postcode;
+        this.emergencyContactName = emergencyContactName;
+        this.emergencyContactPhone = emergencyContactPhone;
+        this.registrationDate = registrationDate;
         this.gpSurgeryId = gpSurgeryId;
-
-        // getters and setters for patient data
     }
 
     public String getId() {
         return id;
-
     }
 
-    public String getName() {
-        return name;
-
-    }
-
-    public String getNhsNumber() {
-        return nhsNumber;
-
-    }
-
-    public String getContact() {
-        return contact;
-
-    }
-
-    public String getGpSurgeryId() {
-        return gpSurgeryId;
-
-    }
-
-    public void setName(String name) {
-        this.name = name;
-
-    }
-
-    public void setNhsNumber(String nhsNumber) {
-        this.nhsNumber = nhsNumber;
-
-    }
-
-    public void setContact(String contact) {
-        this.contact = contact;
-
-    }
-
-    public void setGpSurgeryId(String gpSurgeryId) {
-        this.gpSurgeryId = gpSurgeryId;
-
+    public String getFullName() {
+        return firstName + " " + lastName;
     }
 
     @Override
-    //provides readable String representation of patient details
-    // useful for laying out data in console/debugging
     public String toString() {
-        return "Patient [id=" + id + ", name=" + name + ", nhsNumber=" + nhsNumber + ", contact=" + contact + ", gpSurgeryId=" + gpSurgeryId + "]";
+        return getFullName() + " (NHS: " + nhsNumber + ")";
     }
+}
 
-    }
 
