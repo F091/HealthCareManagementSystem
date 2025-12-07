@@ -15,6 +15,7 @@ public class Clinician {
     private String employmentStatus;
     private String startDate;
 
+
     public Clinician(
             String id,
             String firstName,
