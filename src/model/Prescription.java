@@ -2,55 +2,67 @@ package model;
 
 public class Prescription {
 
-    private final String id;           //  prescription ID
-    private String patientId;          // link to Patient.id
-    private String clinicianId;        // link to Clinician.id
-    private String medication;         // e.g. "Amoxicillin"
-    private String dosage;             // e.g. "1 tablet 3 times per day"
-    private String instructions;       // additional notes
-    private String dateIssued;         // simple String date, e.g "2025-12-01"
+    private String id;
+    private String patientId;
+    private String clinicianId;
+    private String appointmentId;
+    private String prescriptionDate;
+    private String medicationName;
+    private String dosage;
+    private String frequency;
+    private String durationDays;
+    private String quantity;
+    private String instructions;
+    private String pharmacyName;
+    private String status;
+    private String issueDate;
+    private String collectionDate;
 
-    public Prescription(String id,
-                        String patientId,
-                        String clinicianId,
-                        String medication,
-                        String dosage,
-                        String instructions,
-                        String dateIssued) {
-
+    public Prescription(
+            String id,
+            String patientId,
+            String clinicianId,
+            String appointmentId,
+            String prescriptionDate,
+            String medicationName,
+            String dosage,
+            String frequency,
+            String durationDays,
+            String quantity,
+            String instructions,
+            String pharmacyName,
+            String status,
+            String issueDate,
+            String collectionDate
+    ) {
         this.id = id;
         this.patientId = patientId;
         this.clinicianId = clinicianId;
-        this.medication = medication;
+        this.appointmentId = appointmentId;
+        this.prescriptionDate = prescriptionDate;
+        this.medicationName = medicationName;
         this.dosage = dosage;
+        this.frequency = frequency;
+        this.durationDays = durationDays;
+        this.quantity = quantity;
         this.instructions = instructions;
-        this.dateIssued = dateIssued;
+        this.pharmacyName = pharmacyName;
+        this.status = status;
+        this.issueDate = issueDate;
+        this.collectionDate = collectionDate;
     }
 
-    // Getter
-    public String getId() { return id; }
-    public String getPatientId() { return patientId; }
-    public String getClinicianId() { return clinicianId; }
-    public String getMedication() { return medication; }
-    public String getDosage() { return dosage; }
-    public String getInstructions() { return instructions; }
-    public String getDateIssued() { return dateIssued; }
+    public String getId() {
+        return id;
+    }
 
-    // Setters
-    public void setPatientId(String patientId) { this.patientId = patientId; }
-    public void setClinicianId(String clinicianId) { this.clinicianId = clinicianId; }
-    public void setMedication(String medication) { this.medication = medication; }
-    public void setDosage(String dosage) { this.dosage = dosage; }
-    public void setInstructions(String instructions) { this.instructions = instructions; }
-    public void setDateIssued(String dateIssued) { this.dateIssued = dateIssued; }
+    public String getPatientId() {
+        return patientId;
+    }
 
     @Override
     public String toString() {
-        return "Prescription[id=" + id +
-                ", patientId=" + patientId +
-                ", clinicianId=" + clinicianId +
-                ", medication=" + medication +
-                ", dosage=" + dosage +
-                ", dateIssued=" + dateIssued + "]";
+        return "Prescription " + id + " for patient " + patientId
+                + " (" + medicationName + ", " + dosage + ")";
     }
 }

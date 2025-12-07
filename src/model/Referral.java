@@ -1,57 +1,87 @@
 package model;
 
-// Represents a referral from one clinician to another for a patient
 public class Referral {
 
-    private final String id;           // unique referral ID
-    private String patientId;          // Patient being referred
-    private String fromClinicianId;   // who is making the referral (e.g GP)
-    private String toClinicianId;      // who will receive the referral (e.g specialist)
-    private String urgency;           // "Routine", "Urgent", "Two-Week Wait"
-    private String reason;             // short summary of why they are referred
-    private String date;               // date of referral as a simple String
+    private String id;
+    private String patientId;
+    private String fromClinicianId;
+    private String toClinicianId;
+    private String fromFacilityId;
+    private String toFacilityId;
+    private String referralDate;
+    private String urgencyLevel;
+    private String referralReason;
+    private String clinicalSummary;
+    private String requestedInvestigations;
+    private String status;
+    private String appointmentId;
+    private String notes;
+    private String createdDate;
+    private String lastUpdated;
 
-    public Referral(String id,
-                    String patientId,
-                    String fromClinicianId,
-                    String toClinicianId,
-                    String urgency,
-                    String reason,
-                    String date) {
-
+    public Referral(
+            String id,
+            String patientId,
+            String fromClinicianId,
+            String toClinicianId,
+            String fromFacilityId,
+            String toFacilityId,
+            String referralDate,
+            String urgencyLevel,
+            String referralReason,
+            String clinicalSummary,
+            String requestedInvestigations,
+            String status,
+            String appointmentId,
+            String notes,
+            String createdDate,
+            String lastUpdated
+    ) {
         this.id = id;
         this.patientId = patientId;
         this.fromClinicianId = fromClinicianId;
         this.toClinicianId = toClinicianId;
-        this.urgency = urgency;
-        this.reason = reason;
-        this.date = date;
+        this.fromFacilityId = fromFacilityId;
+        this.toFacilityId = toFacilityId;
+        this.referralDate = referralDate;
+        this.urgencyLevel = urgencyLevel;
+        this.referralReason = referralReason;
+        this.clinicalSummary = clinicalSummary;
+        this.requestedInvestigations = requestedInvestigations;
+        this.status = status;
+        this.appointmentId = appointmentId;
+        this.notes = notes;
+        this.createdDate = createdDate;
+        this.lastUpdated = lastUpdated;
     }
 
-    // Getters
-    public String getId() { return id; }
-    public String getPatientId() { return patientId; }
-    public String getFromClinicianId() { return fromClinicianId; }
-    public String getToClinicianId() { return toClinicianId; }
-    public String getUrgency() { return urgency; }
-    public String getReason() { return reason; }
-    public String getDate() { return date; }
+    public String getId() {
+        return id;
+    }
 
-    // Setters
-    public void setPatientId(String patientId) { this.patientId = patientId; }
-    public void setFromClinicianId(String fromClinicianId) { this.fromClinicianId = fromClinicianId; }
-    public void setToClinicianId(String toClinicianId) { this.toClinicianId = toClinicianId; }
-    public void setUrgency(String urgency) { this.urgency = urgency; }
-    public void setReason(String reason) { this.reason = reason; }
-    public void setDate(String date) { this.date = date; }
+    public String getPatientId() {
+        return patientId;
+    }
+
+    public String getFromClinicianId() {
+        return fromClinicianId;
+    }
+
+    public String getToClinicianId() {
+        return toClinicianId;
+    }
+
+    public String getUrgencyLevel() {
+        return urgencyLevel;
+    }
+
+    public String getStatus() {
+        return status;
+    }
 
     @Override
     public String toString() {
-        return "Referral[id=" + id +
-                ", patientId=" + patientId +
-                ", fromClinicianId=" + fromClinicianId +
-                ", toClinicianId=" + toClinicianId +
-                ", urgency=" + urgency +
-                ", date=" + date + "]";
+        return "Referral " + id + " for patient " + patientId
+                + " (urgency: " + urgencyLevel + ", status: " + status + ")";
     }
 }
