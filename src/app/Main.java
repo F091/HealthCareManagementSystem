@@ -1,13 +1,23 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-  //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-  // to see how IntelliJ IDEA suggests fixing it.
-  IO.println(String.format("Hello and welcome!"));
+package app;
 
-  for (int i = 1; i <= 5; i++) {
-    //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-    // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-    IO.println("i = " + i);
-  }
+import model.DataLoader;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        // Create the data loader
+        DataLoader loader = new DataLoader();
+
+        // Load all CSV data
+        loader.loadAll();
+
+        // Simple output to check data loaded correctly
+        System.out.println("Patients loaded: " + loader.getPatients().size());
+        System.out.println("Clinicians loaded: " + loader.getClinicians().size());
+        System.out.println("Facilities loaded: " + loader.getFacilities().size());
+        System.out.println("Appointments loaded: " + loader.getAppointments().size());
+        System.out.println("Prescriptions loaded: " + loader.getPrescriptions().size());
+        System.out.println("Referrals loaded: " + loader.getReferrals().size());
+    }
 }
