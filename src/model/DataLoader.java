@@ -328,7 +328,7 @@ public class DataLoader {
         return cols;
     }
 
-    // Converts text to int safely (if it fails, just return 0).
+    // Converts text to int safely (if fails, just return 0).
     private int toInt(String text) {
         try {
             return Integer.parseInt(text);
